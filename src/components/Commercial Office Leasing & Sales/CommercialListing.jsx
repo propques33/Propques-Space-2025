@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import image5 from '../../assets/banner/image.png';
 import image2 from '../../assets/banner/image2.png';
 import image3 from '../../assets/banner/imag3.png';
@@ -101,9 +102,9 @@ const CommercialListing = () => {
 
       {/* CTA Button */}
       <div className="mt-12 text-center">
-        <button className="bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-all">
-          View All Properties for Sale
-        </button>
+        <Link to='/view-all-properties' className="bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-all">
+          View All Properties 
+        </Link>
       </div>
     </div>
   );

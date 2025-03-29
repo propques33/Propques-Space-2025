@@ -63,3 +63,48 @@ export const projects = [
     status: 'inactive',
   },
 ];
+
+
+export const locationData = [
+  {
+    city: "Lucknow",
+    subLocations: [
+      {
+        name: "Hazratganj",
+        address: "Some address in Hazratganj",
+        image: "https://via.placeholder.com/300x200.png?text=Lucknow+1"
+      },
+      {
+        name: "Gomti Nagar",
+        address: "Some address in Gomti Nagar",
+        image: "https://via.placeholder.com/300x200.png?text=Lucknow+2"
+      }
+    ]
+  },
+  {
+    city: "Mumbai",
+    subLocations: [
+      {
+        name: "Andheri",
+        address: "Some address in Andheri",
+        image: "https://via.placeholder.com/300x200.png?text=Mumbai+1"
+      },
+      {
+        name: "Bandra",
+        address: "Some address in Bandra",
+        image: "https://via.placeholder.com/300x200.png?text=Mumbai+2"
+      }
+    ]
+  },
+  {
+    city: "Indore",
+    subLocations: [
+      {
+        name: "Vijay Nagar",
+        address: "Some address in Vijay Nagar",
+        image: "https://via.placeholder.com/300x200.png?text=Indore+1"
+      }
+    ]
+  }
+];
+
