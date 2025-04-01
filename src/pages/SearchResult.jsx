@@ -11,7 +11,7 @@ const SearchResult = () => {
       // Build query parameters from filters
       const queryParams = new URLSearchParams(filters).toString();
       // Replace with your actual API endpoint
-      const res = await fetch(`http://localhost:5000/api/search?${queryParams}`);
+      const res = await fetch(`http://localhost:3000/api/search?${queryParams}`);
       const data = await res.json();
   
       setResults(data);

@@ -20,7 +20,7 @@ const FilterBanner = () => {
 
   useEffect(() => {
     // Fetch locations data from backend using Axios
-    axios.get('http://localhost:5000/api/locations')
+    axios.get('http://localhost:3000/api/locations')
     
       .then(response => {
         let locs = response.data;

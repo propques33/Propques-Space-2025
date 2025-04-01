@@ -16,7 +16,7 @@ export default function LocationFilter() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/locations")
+      .get("http://localhost:3000/api/locations")
       .then((response) => {
         const data = response.data;
         if (Array.isArray(data) && data.length > 0) {
