@@ -10,7 +10,7 @@ function App() {
   return (
      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/city/:cityName/center/:centerId" element={<ProjectPage />} />
+        <Route path="/properties/:id" element={<ProjectPage />} />
         <Route path="/commercial-propert-leasing-and-sale" element={<Home2 />} />
         <Route path="/view-all-projects" element={< ViewAllProperties  />} />
         <Route path="/search" element={< SearchResult  />} />
