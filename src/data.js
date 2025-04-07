@@ -34,34 +34,7 @@ export const projects = [
     image: image4,
     status: 'active',
   },
-  {
-    id: 5,
-    title: 'Bangalore',
-    location: 'Bangalore',
-    image: image,
-    status: 'active',
-  },
-  {
-    id: 6,
-    title: 'Hyderabad',
-    location: 'Hyderabad',
-    image: image2,
-    status: 'inactive',
-  },
-  {
-    id: 7,
-    title: 'Chennai',
-    location: 'Chennai',
-    image: image3,
-    status: 'active',
-  },
-  {
-    id: 8,
-    title: 'Pune',
-    location: 'Pune',
-    image: image4,
-    status: 'inactive',
-  },
+  
 ];
 
 

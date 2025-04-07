@@ -6,15 +6,18 @@ import ProjectPage from '../components/ProjectPage.jsx';
 import ViewAllProperties from '../components/ViewAllProperties.jsx';
 import SearchResult from '../pages/SearchResult.jsx';
 import AddCenterData from '../components/AddCenterData.jsx';
+import Results from '../components/Results.jsx';
 function App() { 
   return (
      <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/propques-portfolio" element={<Home />} />
         <Route path="/properties/:id" element={<ProjectPage />} />
-        <Route path="/commercial-propert-leasing-and-sale" element={<Home2 />} />
+        <Route path="/" element={<Home2 />} />
         <Route path="/view-all-projects" element={< ViewAllProperties  />} />
         <Route path="/search" element={< SearchResult  />} />
         <Route path="/add-center" element={< AddCenterData  />} />
+        <Route path="/results" element={< Results  />} />
+
         
              
       </Routes>

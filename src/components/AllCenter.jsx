@@ -17,7 +17,7 @@ const AllCenter = () => {
     <div className="px-6 py-4">
       {/* Filter Tabs */}
       <div className="flex gap-4 mb-6 flex-wrap">
-        {['All', 'Indore', 'Lucknow', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune'].map(city => (
+        {['All', 'Indore', 'Lucknow', 'Mumbai'].map(city => (
           <button
             key={city}
             onClick={() => setFilter(city)}

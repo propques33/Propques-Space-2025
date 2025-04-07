@@ -13,6 +13,7 @@ const ProjectCard = ({ project }) => {
       <div className="absolute bottom-0 left-0 right-0 bg-[#00000067] bg-opacity-50 text-white text-center text-xl p-4">
         {project.title}
       </div>
+     
     </div>
   );
 };

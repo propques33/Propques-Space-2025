@@ -4,7 +4,7 @@ import weblogo from '../assets/image.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-blue-500 to-blue-600 text-white py-12 px-6">
+    <footer className="bg-gradient-to-b from-[#20B1EE] to-blue-500 text-white py-12 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Column 1 - Branding */}
         <div className="md:col-span-1">
