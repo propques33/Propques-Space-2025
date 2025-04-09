@@ -99,7 +99,7 @@ const PropertyList = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 gap-4">
+    <div className="max-w-7xl mx-auto p-4 gap-4 ">
       {/* Mobile Search Section at Top */}
       <div className="block lg:hidden mb-4">
         <div className="bg-white shadow rounded px-4 py-2">

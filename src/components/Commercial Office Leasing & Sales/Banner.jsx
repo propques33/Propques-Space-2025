@@ -46,7 +46,7 @@ export default function FilterPage() {
   };
 
   return (
-    <div className="relative md:h-[600px] h-[600px] max-wxl mx-auto overflow-hidden">
+    <div className="relative md:h-[600px] h-screen max-wxl mx-auto overflow-hidden">
       {/* Slider container */}
       <div
         className="absolute top-0 left-0 h-full w-full flex transition-transform duration-1000 ease-in-out"
@@ -71,16 +71,16 @@ export default function FilterPage() {
       {/* Foreground content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         <h2 className="flex flex-col items-center gap-5">
-          <span className="text-5xl leading-[10p] md:leading-none md:text-5xl font- text-zinc-100 capitalize">
-            Discover Top <p className="block md:hidden"></p>  <span className="bg-[#20B1EE]  px-4 rounded-full"> Office Spaces
+          <span className="text-[44px] leading-[10p] md:leading-none md:text-5xl font- text-zinc-100 capitalize">
+            Discover Top <p className="block md:hidden"></p>  <span className="bg-[#20B1EE]  px-4 rounded-full text-nowrap"> Office Spaces
               </span> India
           </span>
-          <span className="text-xl md:text-2xl capitalize text-white">
+          <span className="text-xl md:text-2xl capitalize text-white md:mt-0 lg:mt-0 -mt-4">
             Explore Prime Managed Workspaces Near You
           </span>
         </h2>
 
-        <div className="relative flex flex-col md:flex-row mt-5 items-center justify-center space-y-2 md:space-y-0 md:space-x-2 bg-white rounded-2xl md:w-auto w-full md:rounded-full md:shadow-lg p-4">
+        <div className="relative flex flex-col md:flex-row mt-5 items-center justify-center space-y-2 md:space-y-0 md:space-x-2 bg-white rounded-2xl md:w-auto w-full md:rounded-full md:shadow-lg p-4 text-sm md:text-medium">
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -109,7 +109,7 @@ export default function FilterPage() {
 
           <button
             onClick={handleSearch}
-            className="bg-[#20B1EE] hover:bg-[#7cd8ff] text-white rounded-full px-5 py-3"
+            className="bg-[#20B1EE] hover:bg-[#7cd8ff] text-white rounded-full px-5 py-3 mt-2 md:mt-0 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg flex items-center gap-2"
             disabled={!city || !center}
           >
             Go now

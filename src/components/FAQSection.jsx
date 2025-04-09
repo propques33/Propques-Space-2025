@@ -31,17 +31,17 @@ export default function FAQSection() {
 
   return (
     <section className="bg-zinc-50 px-6 py-20">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
         {/* Left Content */}
         <div>
           <h2 className="text-4xl  mb-4">Frequently Asked Questions</h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 md:text-lg text-sm ">
             Have questions? We’ve got answers to help you choose the right coworking experience.
           </p>
         </div>
 
         {/* Right - Accordion */}
-        <div className="space-y-4 w-full">
+        <div className="space-y-4 w-full text-sm">
           {faqs.map((faq, index) => (
             <div
               key={index}

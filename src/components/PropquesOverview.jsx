@@ -12,7 +12,7 @@ import {
 
 export default function PropquesOverview() {
   return (
-    <section className="max-w-7xl mx-auto py-16 text-center space-y-14">
+    <section className="max-w-7xl mx-auto py-16 text-center space-y-14 px-6">
       {/* Tagline */}
       <div className="space-y-6">
         <h2 className="text-4xl md:text-5xl font-semibold text-[#20B1EE]">
@@ -48,7 +48,7 @@ export default function PropquesOverview() {
 
       {/* Why Propques */}
       <div className="space-y-6 my-20">
-        <h3 className="text-5xl font-semibold capitalize  text-[#20B1EE]">Why choose propques spaces</h3>
+        <h3 className="text-4xl font-semibold capitalize  text-[#20B1EE]">Why choose propques spaces</h3>
 
         <p className="text-xl text-gray-700">
         Propques Workspaces That Work for You         </p>
@@ -68,7 +68,7 @@ export default function PropquesOverview() {
         <h3 className="text-2xl font-semibold text-[#20B1EE]">
           Your Space. Our Expertise.
         </h3>
-        <p className="text-gray-700 text-lg">
+        <p className="text-gray-700 md:text-lg text-sm">
           We transform properties into premium coworking brands — with strategy,
           design, and full-stack operations.
         </p>
@@ -77,8 +77,8 @@ export default function PropquesOverview() {
       {/* The Propques Advantage */}
       <div className="space-y-6">
         <h3 className="text-4xl md:text-5xl font-semibold text-[#20B1EE]">The Propques Advantage</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-700 mt-12">
-          <MiniFeature icon={<TrendingUp />} text="Higher Occupancy & Yields" />
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-700 mt-12 text-sm">
+          <MiniFeature icon={<TrendingUp />} text="Higher Yields" />
           <MiniFeature icon={<Settings />} text="Expert Ops Management" />
           <MiniFeature icon={<Rocket />} text="Faster Setup & Launch" />
           <MiniFeature icon={<BadgeCheck />} text="Strong Brand Identity" />

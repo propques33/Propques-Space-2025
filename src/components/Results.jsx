@@ -13,9 +13,12 @@ export default function ResultsPage() {
 
   useEffect(() => {
     axios
-      .get("https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/search", {
-        params: { city, center },
-      })
+      .get(
+        "https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/search",
+        {
+          params: { city, center },
+        }
+      )
       .then((res) => setResults(res.data));
   }, [city, center]);
 
@@ -61,7 +64,7 @@ export default function ResultsPage() {
   );
 
   return (
-    <div className="p-6 max-w-7xl mx-auto relative">
+    <div className="md:p-6 pt-2 max-w-7xl mx-auto relative">
       <h2 className="text-2xl  mb-4">Search Results</h2>
 
       <div className="flex flex-col md:flex-row">
@@ -102,10 +105,10 @@ export default function ResultsPage() {
           {filteredResults.length === 0 ? (
             <p>No results found.</p>
           ) : (
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-6 ">
               {filteredResults.map((prop) => (
                 <Link key={prop._id} to={`/properties/${prop._id}`}>
-                  <div className="border border-zinc-300 rounded-xl p-4 shadow">
+                  <div className="md:border border-zinc-300 rounded-xl md:p-4 py-2 md:py-4 md:shadow">
                     <img
                       src={prop.thumbnails}
                       alt={prop.name}
@@ -113,70 +116,90 @@ export default function ResultsPage() {
                     />
                     <div className="flex flex-col sm:flex-row justify-between items-start">
                       <div>
-                        <h3 className="text-lg font-bold">{prop.name}</h3>
-                        <p className="text-gray-600">{prop.cityName}</p>
+                        <h3 className="text-2xl font-semibold">{prop.name}</h3>
+                        <p className="text-gray-600 text-xl">{prop.cityName}</p>
                         <p className="text-gray-500 text-sm mb-2 w-full sm:w-[80%]">
                           {prop.address}
                         </p>
                       </div>
                       <div className="mt-2 sm:mt-0">
                         <Link to={`/properties/${prop._id}`}>
-                          <p className="py-2 w-full sm:w-32 mx-auto flex items-center justify-center bg-[#20B1EE] hover:bg-blue-700 transition-all ease-in-out text-white rounded">
+                          <p className="py-2 -mt-2 md:mt-0 lg:mt-0 px-4 w-full sm:w-32 mx-auto flex items-center justify-center bg-[#20B1EE] hover:bg-blue-700 transition-all ease-in-out text-white rounded">
                             Explore
                           </p>
                         </Link>
                       </div>
                     </div>
                     {/* Inventory Table */}
-                    {prop.inventory && (() => {
-  const filteredInventory = prop.inventory.filter((item) => passesFilters(item));
-  if (filteredInventory.length === 0) return null;
-  return (
-    <table className="table-auto w-full text-sm border mt-3">
-      <thead>
-        <tr className="bg-gray-100">
-          <th className="p-2 border">Asset Name</th>
-          <th className="p-2 border">Vacant Manager Cabins</th>
-          <th className="p-2 border">Vacant Work Station</th>
-        </tr>
-      </thead>
-      <tbody>
-      {filteredInventory.map((item) => {
-  const freeCabins = item.managerCabins.filter((c) => c.occupied === 0);
-  const freeRooms = item.rooms.filter((r) => r.occupied === 0);
-  // Skip this row if no spaces are vacant
-  if (freeCabins.length === 0 && freeRooms.length === 0) return null;
+                    {prop.inventory &&
+                      (() => {
+                        const filteredInventory = prop.inventory.filter(
+                          (item) => passesFilters(item)
+                        );
+                        if (filteredInventory.length === 0) return null;
+                        return (
+                          <table className="table-auto w-full text-sm border mt-3">
+                            <thead>
+                              <tr className="bg-[#20b0ee] text-white">
+                                <th className="p-2 font-normal border-tr">Office Name</th>
+                                <th className="p-2 font-normal ">
+                                  Vacant Manager Cabins
+                                </th>
+                                <th className="p-2 font-normal ">
+                                  Vacant Work Station
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody className="">
+                              {filteredInventory.map((item) => {
+                                const freeCabins = item.managerCabins.filter(
+                                  (c) => c.occupied === 0
+                                );
+                                const freeRooms = item.rooms.filter(
+                                  (r) => r.occupied === 0
+                                );
+                                // Skip this row if no spaces are vacant
+                                if (
+                                  freeCabins.length === 0 &&
+                                  freeRooms.length === 0
+                                )
+                                  return null;
 
-  return (
-    <tr key={item._id} className="border-t">
-      <td className="p-2 border">{item.assetName || "-"}</td>
-      <td className="p-2 border">
-        <ul className="list-disc ml-4">
-          {freeCabins.map((cabin) => (
-            <li key={cabin._id}>
-              {cabin.managerName} (Cap: {cabin.capacity})
-            </li>
-          ))}
-        </ul>
-      </td>
-      <td className="p-2 border">
-        <ul className="list-disc ml-4">
-          {freeRooms.map((room) => (
-            <li key={room._id}>
-              {room.roomType} (Cap: {room.capacity})
-            </li>
-          ))}
-        </ul>
-      </td>
-    </tr>
-  );
-})}
+                                return (
+                                  <tr key={item._id} className="border-b">
+                                    <td className="p-2 border-b ">
+                                      <p className="flex flex-col items-center justify-center">
 
-      </tbody>
-    </table>
-  );
-})()}
-
+                                      {item.assetName || "-"}
+                                      </p>
+                                    </td>
+                                    <td className="p-2 border-b">
+                                      <ul className="list-disc ml-4 flex flex-col items-center justify-center">
+                                        {freeCabins.map((cabin) => (
+                                          <li key={cabin._id} className="list-none">
+                                            Capacity:{" "}
+                                            {cabin.capacity}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </td>
+                                    <td className="p-2 border-b">
+                                      <ul className="list-disc ml-4 flex flex-col items-center justify-center">
+                                        {freeRooms.map((room) => (
+                                          <li key={room._id} className="list-none">
+                                            Capacity:{" "}
+                                            {room.capacity}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        );
+                      })()}
                   </div>
                 </Link>
               ))}

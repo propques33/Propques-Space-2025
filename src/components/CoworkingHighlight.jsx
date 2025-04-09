@@ -8,10 +8,10 @@ export default function CoworkingHighlight() {
         <div>
           <h1 className="text-4xl leading-tight mb-4">
           Level Up Your Work at  
-          <br />
+          {" "}
             <span className="text-gray-900">India’s Best Managed Workspaces</span>
           </h1>
-          <p className=" text-gray-600 capitalize">
+          <p className=" text-gray-600 capitalize text-sm mb-4 md:text-medium">
           Whether you're a freelancer, startup, or enterprise team, discover vibrant managed workspaces built for productivity and connection. As leaders in Coworking consultancy India, we deliver Coworking space consulting, Coworking setup consultants, and End-to-end coworking solutions. From Coworking business consulting to Property consultancy for coworking, we fuel your growth under one roof.
           </p>
         </div>

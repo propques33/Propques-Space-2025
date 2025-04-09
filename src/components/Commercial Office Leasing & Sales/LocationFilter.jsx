@@ -39,8 +39,8 @@ const PropertyList = () => {
   return (
     <div className="p-4 max-w-7xl mx-auto">
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 mb-4">
-        <label htmlFor="city" className="font-semibold text-gray-700 mb-2 sm:mb-0">
+      <div className="flex gap-2 items-center justify-between md:justify-normal sm:space-x-2 mb-4">
+        <label htmlFor="city" className="font-semibold text-gray-700 mb-2  sm:mb-0">
           Select City:
         </label>
         <select
@@ -73,7 +73,7 @@ const PropertyList = () => {
                 />
               ) : (
                 <div className="w-full h-48 bg-gray-100 flex items-center justify-center rounded">
-                  <ImageIcon className="text-gray-400 w-8 h-8" />
+                  <ImageIcon className="text-gray-400 md:w-8 md:h-8 h-20" />
                 </div>
               )}
             </div>
