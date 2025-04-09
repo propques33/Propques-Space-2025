@@ -209,7 +209,7 @@ export default function ResultsPage() {
       </div>
 
       {showFilterPopup && (
-        <div className="fixed text-sm inset-x-0 bottom-8 bg-white px-8 py-4 shadow-lg md:hidden rounded-full mx-4 shadow-xl border border-[#20B1EE]">
+        <div className="fixed text-sm inset-x-0 bottom-8 bg-white px-8 py-4 shadow-lg md:hidden rounded-full mx-4 shadow-xl border-t border-[#20B1EE]">
           <div className="flex flex-col space-y-4">
             <form className="flex flex-col space-y-2">
               <div className="flex w-full justify-between items-center">
