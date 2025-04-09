@@ -5,10 +5,11 @@ export default function CoworkingCentersBanner() {
   return (
     <div className="bg-[#20B1EE] text-white px-8 py-32 my-10 rounded-xl max-w-7xl mx-auto text-center">
       <h1 className="text-4xl font-semibold mb-3">
-        Discover Inspiring Managed Workspaces
+      Discover Managed Workspaces That Fit the Way You Work
       </h1>
       <p className="mb-6">
-        Explore managed  workspaces across multiple locations and find the ideal workspace.
+      Explore Top Locations and Find Your Perfect Space
+
       </p>
       <p className="inline-flex items-center gap-2 bg-white text-[#20B1EE] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition">
         <Link to='/view-all-projects'>

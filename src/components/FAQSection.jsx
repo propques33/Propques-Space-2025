@@ -3,24 +3,22 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is coworking?",
+    question: "Can I come visit before joining?",
     answer:
-      "Coworking is a shared workspace model where professionals from different fields work together in a collaborative environment.",
+      "Absolutely! We’d love to show you around. For memberships, book a free trial day to experience firsthand what it’s like to work at Propques Spaces. And if you’re looking for a private office, join us for a tour and decide on the perfect layout for your space. We can’t wait to welcome you!" },
+  {
+    question: "How do I become a member?",
+    answer:
+      "Just pick the location that speaks to you, choose the membership that fits like your favourite sweater, pay, and voilà! You’re officially part of the coolest community around! Plus, if you’re eyeing a private office, our sales team is ready to chat. Swing by for a visit and see for yourself what makes Propques Spaces the perfect fit for your business needs!",
   },
   {
-    question: "Where are your coworking centers located?",
+    question: "Can I bring my pet to office?",
     answer:
-      "Our centers are strategically located in prime areas across major cities in India.",
-  },
+      "Of course! We love furry friends. Just let us know in advance, and we’ll make sure your pet has a great time too. We have a few pet-friendly locations, so check with us to find the perfect spot for you and your four-legged buddy.",},
   {
-    question: "What amenities are provided?",
+    question: "Can I cancel my membership  any time?",
     answer:
-      "We offer high-speed internet, meeting rooms, unlimited coffee, printing facilities, and community events.",
-  },
-  {
-    question: "What are the membership plans?",
-    answer:
-      "We offer flexible plans including daily passes, monthly memberships, and team office solutions.",
+      "If you ever need to cancel your membership, just reach out to your community manager. There are no long-term commitments here – you can simply terminate it by giving us 30 days written notice. We’re here to make your workspace experience as flexible as possible!",
   },
 ];
 

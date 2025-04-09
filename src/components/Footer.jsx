@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Logo and Certifications */}
         <div className="space-y-4">
           <div className="flex flex-col space-y-2">
-            <span className="font-bold text-xl">Propques Space</span>
+            <span className="font-bld text-4xl">Propques Spaces</span>
             {/* <span className="text-sm">Corporation</span>
             <span className="text-sm">2024 Property Week</span>
             <span className="text-xs">Awards Finalist</span> */}

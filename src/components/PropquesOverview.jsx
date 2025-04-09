@@ -14,9 +14,11 @@ export default function PropquesOverview() {
   return (
     <section className="max-w-7xl mx-auto py-16 text-center space-y-14">
       {/* Tagline */}
-      <div className="space-y-3">
+      <div className="space-y-6">
         <h2 className="text-4xl md:text-5xl font-semibold text-[#20B1EE]">
-          From Vacant to Vibrant
+        Traditional Spaces to Managed Spaces 
+
+
         </h2>
         <p className="text-xl text-gray-700">
           Propques Powers the Future of Workspaces
@@ -24,8 +26,7 @@ export default function PropquesOverview() {
       </div>
 
       {/* What We Offer */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-">What We Offer</h3>
+      <div className="s">
         <div className="grid md:grid-cols-3 gap-8 text-left">
           <FeatureCard
             icon={<Building2 className="w-8 h-8 text-[#20B1EE]" />}
@@ -47,8 +48,14 @@ export default function PropquesOverview() {
 
       {/* Why Propques */}
       <div className="space-y-6 my-20">
-        <h3 className="text-2xl ">Why Propques?</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm text-gray-700">
+        <h3 className="text-5xl font-semibold capitalize  text-[#20B1EE]">Why choose propques spaces</h3>
+
+        <p className="text-xl text-gray-700">
+        Propques Workspaces That Work for You         </p>
+
+       
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-gray-700">
           <MiniFeature icon={<TrendingUp />} text="Higher Rental Yields" />
           <MiniFeature icon={<Rocket />} text="Faster Occupancy Growth" />
           <MiniFeature icon={<ClipboardCheck />} text="Complete Management" />
@@ -69,8 +76,8 @@ export default function PropquesOverview() {
 
       {/* The Propques Advantage */}
       <div className="space-y-6">
-        <h3 className="text-2xl font-">The Propques Advantage</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm text-gray-700">
+        <h3 className="text-4xl md:text-5xl font-semibold text-[#20B1EE]">The Propques Advantage</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-700 mt-12">
           <MiniFeature icon={<TrendingUp />} text="Higher Occupancy & Yields" />
           <MiniFeature icon={<Settings />} text="Expert Ops Management" />
           <MiniFeature icon={<Rocket />} text="Faster Setup & Launch" />
