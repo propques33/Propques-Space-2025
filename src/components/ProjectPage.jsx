@@ -117,7 +117,7 @@ const PropertyDetails = () => {
 
         {/* Property Details */}
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold flex items-center gap-2">
+          <h1 className="text-3xl font-semibold flex items-center gap-2">
             <Building size={24} />
             {property.name}
           </h1>

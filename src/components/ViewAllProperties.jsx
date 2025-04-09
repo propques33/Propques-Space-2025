@@ -99,10 +99,10 @@ const PropertyList = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 gap-4 ">
+    <div className="max-w-7xl mx-auto p-4 gap-4 md:mt-12   ">
       {/* Mobile Search Section at Top */}
-      <div className="block lg:hidden mb-4">
-        <div className="bg-white shadow rounded px-4 py-2">
+      <div className="block lg:hidden mb-4 ">
+        <div className="bg-white  md:mt-0 mt-16 ">
           <h3 className="text-lg font-semibold mb-2 m-auto text-center">
             Search
           </h3>
@@ -123,7 +123,7 @@ const PropertyList = () => {
         </div>
       </div>
 
-      <div className="flex gap-4 flex-col lg:flex-row">
+      <div className="flex gap-4 flex-col lg:flex-row md:mt-o -mt-12">
         {/* Desktop Sidebar Filters */}
         <div className="hidden lg:block lg:w-1/4    mt-12  p-4">
           <h3 className="text-lg font-semibold mb-4">Filters</h3>
@@ -188,7 +188,7 @@ const PropertyList = () => {
                         <img
                           src={property.details.carouselImages[0]}
                           alt={property.name}
-                          className="md:w-80 w-full h-full object-cover rounded"
+                          className="md:w-[500px] w-full h-full object-cover rounded"
                         />
                       ) : (
                         <div className="w-80 h-full flex items-center justify-center bg-gray-100 text-gray-500">
@@ -196,7 +196,7 @@ const PropertyList = () => {
                         </div>
                       )}
                       <div className="p-4 md:space-y-2 space-y-1">
-                        <h2 className="lg:text-3xl text-xl font-semibold">
+                        <h2 className="lg:text-3xl text-2xl font-semibold">
                           {property.name}
                         </h2>
                         <p className="lg:text-xl text-sm text-gray-800">
@@ -232,14 +232,14 @@ const PropertyList = () => {
                         );
                         if (filteredInventory.length === 0) return null;
                         return (
-                          <table className="table-auto w-full text-sm border mt-3">
-                            <thead>
-                              <tr className="bg-gray-100">
-                                <th className="p-2 border">Asset Name</th>
-                                <th className="p-2 border">
+                          <table className="table-auto w-full text-sm  mt-3 " >
+                            <thead className="">
+                              <tr className="bg-[#20B1EE] text-white">
+                                <th className="p-2 border-b font-medium">Office Name</th>
+                                <th className="p-2 border-b font-medium">
                                   Vacant Manager Cabins
                                 </th>
-                                <th className="p-2 border">
+                                <th className="p-2 border-b font-medium">
                                   Vacant Work Stations
                                 </th>
                               </tr>
@@ -255,26 +255,26 @@ const PropertyList = () => {
                                   ? item.rooms.filter((r) => r.occupied === 0)
                                   : [];
                                 return (
-                                  <tr key={item._id} className="border-t">
-                                    <td className="p-2 border">
+                                  <tr key={item._id} className="border-b ">
+                                    <td className="p-2  flex flex-col items-center justify-center">
                                       {item.assetName || "-"}
                                     </td>
-                                    <td className="p-2 border">
-                                      <ul className="list-disc ml-4">
+                                    <td className="p-2 border-b">
+                                      <ul className="list-none ml-4">
                                         {freeCabins.map((cabin) => (
-                                          <li key={cabin._id}>
-                                            {cabin.managerName} (Cap:{" "}
-                                            {cabin.capacity})
+                                          <li key={cabin._id} className="flex flex-col items-center justify-center">
+                                             Capacity:{" "}
+                                            {cabin.capacity}
                                           </li>
                                         ))}
                                       </ul>
                                     </td>
-                                    <td className="p-2 border">
-                                      <ul className="list-disc ml-4">
+                                    <td className="p-2 border-b ">
+                                      <ul className="list-none ml-4">
                                         {freeRooms.map((room) => (
-                                          <li key={room._id}>
-                                            {room.roomType} (Cap:{" "}
-                                            {room.capacity})
+                                          <li key={room._id} className="flex flex-col items-center justify-center">
+                                         Capacity:{" "}
+                                            {room.capacity}
                                           </li>
                                         ))}
                                       </ul>
@@ -298,7 +298,7 @@ const PropertyList = () => {
 
       {/* Mobile Bottom Filters */}
       <div className="lg:hidden">
-        <div className="fixed bottom-0  left-0 right-0 bg-white shadow-lg rounded-full px-4 py-4 m-4">
+        <div className="fixed bottom-0 border-b-t-2 border-[#20B1EE]  left-0 right-0 bg-white shadow-lg rounded-full px-4 py-4 m-4">
           <div className="flex justify-around items-center mb-4">
             {["Manager Cabin", "Work Station"].map((filter) => (
               <div className="flex items-center" key={filter}>
@@ -318,7 +318,7 @@ const PropertyList = () => {
               </div>
             ))}
           </div>
-          <div className="px-4 text-sm">
+          <div className="px-4 text-sm ">
             <input
               type="number"
               id="mobile-minCapacity"

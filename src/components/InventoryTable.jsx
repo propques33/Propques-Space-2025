@@ -9,18 +9,18 @@ function InventoryTable({ property }) {
   return (
     <>
       {property.inventory?.length > 0 && (
-        <div className="overflow-x-auto mt-2">
-          <table className="min-w-full text-sm text-left border rounded">
-            <thead className="bg-gray-100 text-gray-700">
-              <tr>
-                <th className="px-2 py-1 border">Asset Name</th>
-                <th className="px-2 py-1 border">Manager Cabins</th>
-                <th className="px-2 py-1 border">Workstations</th>
-                <th className="px-2 py-1 border">Occupied</th>
-                <th className="px-2 py-1 border">Available</th>
-                <th className="px-2 py-1 border">Total Capacity</th>
-                <th className="px-2 py-1 border">Floor</th>
-                <th className="px-2 py-1 border">Breakdown</th>
+        <div className="overflow-x-auto mt-2  bg-white z-10">
+          <table className="min-w-full text-sm relative text-left border border-[#20B1EE] rounded">
+            <thead className="bg-[#20B1EE]  top-10 text-gray-100 font-medium">
+              <tr className="">
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Asset Name</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Manager Cabins</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Workstations</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Occupied</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Available</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Total Capacity</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Floor</th>
+                <th className="px-2 py-1 border border-zinc-50 font-medium">Breakdown</th>
               </tr>
             </thead>
             <tbody>
@@ -79,16 +79,16 @@ function InventoryTable({ property }) {
                 return (
                   <React.Fragment key={idx}>
                     <tr className="border-t">
-                      <td className="px-2 py-1 border">{item.assetName}</td>
-                      <td className="px-2 py-1 border  ">{cabinInfo}</td>
-                      <td className="px-2 py-1 border">{roomInfo}</td>
-                      <td className="px-2 py-1 border">{computedOccupied}</td>
-                      <td className="px-2 py-1 border">{computedAvailable}</td>
-                      <td className="px-2 py-1 border">{computedTotalCapacity}</td>
-                      <td className="px-2 py-1 border">
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">{item.assetName}</td>
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]  ">{cabinInfo}</td>
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">{roomInfo}</td>
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">{computedOccupied}</td>
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">{computedAvailable}</td>
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">{computedTotalCapacity}</td>
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">
                         {item.metadata?.floor ?? "-"}
                       </td>
-                      <td className="px-2 py-1 border">
+                      <td className="px-2 py-1 border-1 border-[#20B1EE]">
                         {computedAvailable > 0 && (
                           <button
                             onClick={() => toggleRow(idx)}
