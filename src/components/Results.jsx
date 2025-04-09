@@ -13,7 +13,7 @@ export default function ResultsPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/properties/search", {
+      .get("https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/search", {
         params: { city, center },
       })
       .then((res) => setResults(res.data));

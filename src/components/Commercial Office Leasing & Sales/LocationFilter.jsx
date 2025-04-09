@@ -11,7 +11,7 @@ const PropertyList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/properties/")
+      .get("https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/")
       .then((res) => {
         const data = res.data;
         setProperties(data);

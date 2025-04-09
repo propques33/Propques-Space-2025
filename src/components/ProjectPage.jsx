@@ -23,7 +23,7 @@ const PropertyDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/properties/${id}`)
+      .get(`https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/${id}`)
       .then((res) => setProperty(res.data))
       .catch((err) => console.error(err));
   }, [id]);
