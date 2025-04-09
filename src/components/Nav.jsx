@@ -1,32 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, Phone, Building2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import weblogo from '../assets/weblogo.webp';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  const isHome = location.pathname === '/';
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
+  useEffect(() => {
+    if (!isHome) return setIsScrolled(true); // Force white navbar on non-home pages
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHome]);
+
   const navLinks = [
     { label: 'Home', to: '/', icon: <Home size={18} /> },
-    {
-      label: ' All Projects',
-      to: '/view-all-projects',
-      icon: <Building2 size={18} />,
-    },
-    {
-      label: ' Portfolio',
-      to: '/propques-portfolio',
-      icon: <Building2 size={18} />,
-    },
+    { label: ' All Projects', to: '/view-all-projects', icon: <Building2 size={18} /> },
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 ">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-md' : 'bg-transparent '
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex h-16 justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">

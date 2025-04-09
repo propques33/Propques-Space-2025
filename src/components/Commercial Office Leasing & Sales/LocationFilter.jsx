@@ -69,7 +69,7 @@ const PropertyList = () => {
                 <img
                   src={property.thumbnails}
                   alt={property.name}
-                  className="w-full object-cover rounded"
+                  className="w-full h-[400px] object-cover rounded"
                 />
               ) : (
                 <div className="w-full h-48 bg-gray-100 flex items-center justify-center rounded">
@@ -80,7 +80,7 @@ const PropertyList = () => {
 
             <div className="w-full md:w-1/2 flex flex-col justify-between">
               <div>
-                <h2 className="text-3xl font-bold text-[#20B1EE]">
+                <h2 className="text-3xl font-semibold text-[#20B1EE]">
                   {property.name}
                 </h2>
                 <p className="mt-2 text-gray-500 flex items-center text-sm">

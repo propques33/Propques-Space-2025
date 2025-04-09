@@ -20,6 +20,19 @@ const PropertyList = () => {
         setFiltered(res.data);
       })
       .catch((err) => console.error("Failed to fetch properties", err));
+
+
+       // Ensure scrolling to the top of the document when the component is mounted
+    window.scrollTo({
+      top: 0,
+      behavior: "auto", // You can use "auto" for instant scroll
+    });
+
+    // As a fallback, scroll the root element
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }, []);
 
   // Helper function to filter inventory items
@@ -110,9 +123,9 @@ const PropertyList = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex gap-4 flex-col lg:flex-row">
         {/* Desktop Sidebar Filters */}
-        <div className="hidden lg:block lg:w-1/4 bg-white shadow rounded p-4">
+        <div className="hidden lg:block lg:w-1/4    mt-12  p-4">
           <h3 className="text-lg font-semibold mb-4">Filters</h3>
           <label className="block mb-1 text-sm text-gray-600">City</label>
           <input
@@ -164,7 +177,7 @@ const PropertyList = () => {
         </div>
 
         {/* Properties Display */}
-        <div className="lg:w-3/4 w-full">
+        <div className="lg:w-3/4 w-full mt-16">
           <div className="grid sm:grid-cols-1 gap-6">
             {filtered.length > 0 ? (
               filtered.map((property) => (
@@ -200,65 +213,79 @@ const PropertyList = () => {
                       </div>
                     </div>
                     {/* Inventory Table */}
-                    {property.inventory && (() => {
-  const filteredInventory = property.inventory.filter((item) => {
-    const freeCabins = item.managerCabins
-      ? item.managerCabins.filter((c) => c.occupied === 0)
-      : [];
-    const freeRooms = item.rooms
-      ? item.rooms.filter((r) => r.occupied === 0)
-      : [];
-    return freeCabins.length > 0 || freeRooms.length > 0;
-  });
-  if (filteredInventory.length === 0) return null;
-  return (
-    <table className="table-auto w-full text-sm border mt-3">
-      <thead>
-        <tr className="bg-gray-100">
-          <th className="p-2 border">Asset Name</th>
-          <th className="p-2 border">Vacant Manager Cabins</th>
-          <th className="p-2 border">Vacant Work Stations</th>
-        </tr>
-      </thead>
-      <tbody>
-        {filteredInventory.map((item) => {
-          const freeCabins = item.managerCabins
-            ? item.managerCabins.filter((c) => c.occupied === 0)
-            : [];
-          const freeRooms = item.rooms
-            ? item.rooms.filter((r) => r.occupied === 0)
-            : [];
-          return (
-            <tr key={item._id} className="border-t">
-              <td className="p-2 border">
-                {item.assetName || "-"}
-              </td>
-              <td className="p-2 border">
-                <ul className="list-disc ml-4">
-                  {freeCabins.map((cabin) => (
-                    <li key={cabin._id}>
-                      {cabin.managerName} (Cap: {cabin.capacity})
-                    </li>
-                  ))}
-                </ul>
-              </td>
-              <td className="p-2 border">
-                <ul className="list-disc ml-4">
-                  {freeRooms.map((room) => (
-                    <li key={room._id}>
-                      {room.roomType} (Cap: {room.capacity})
-                    </li>
-                  ))}
-                </ul>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
-})()}
-
+                    {property.inventory &&
+                      (() => {
+                        const filteredInventory = property.inventory.filter(
+                          (item) => {
+                            const freeCabins = item.managerCabins
+                              ? item.managerCabins.filter(
+                                  (c) => c.occupied === 0
+                                )
+                              : [];
+                            const freeRooms = item.rooms
+                              ? item.rooms.filter((r) => r.occupied === 0)
+                              : [];
+                            return (
+                              freeCabins.length > 0 || freeRooms.length > 0
+                            );
+                          }
+                        );
+                        if (filteredInventory.length === 0) return null;
+                        return (
+                          <table className="table-auto w-full text-sm border mt-3">
+                            <thead>
+                              <tr className="bg-gray-100">
+                                <th className="p-2 border">Asset Name</th>
+                                <th className="p-2 border">
+                                  Vacant Manager Cabins
+                                </th>
+                                <th className="p-2 border">
+                                  Vacant Work Stations
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {filteredInventory.map((item) => {
+                                const freeCabins = item.managerCabins
+                                  ? item.managerCabins.filter(
+                                      (c) => c.occupied === 0
+                                    )
+                                  : [];
+                                const freeRooms = item.rooms
+                                  ? item.rooms.filter((r) => r.occupied === 0)
+                                  : [];
+                                return (
+                                  <tr key={item._id} className="border-t">
+                                    <td className="p-2 border">
+                                      {item.assetName || "-"}
+                                    </td>
+                                    <td className="p-2 border">
+                                      <ul className="list-disc ml-4">
+                                        {freeCabins.map((cabin) => (
+                                          <li key={cabin._id}>
+                                            {cabin.managerName} (Cap:{" "}
+                                            {cabin.capacity})
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </td>
+                                    <td className="p-2 border">
+                                      <ul className="list-disc ml-4">
+                                        {freeRooms.map((room) => (
+                                          <li key={room._id}>
+                                            {room.roomType} (Cap:{" "}
+                                            {room.capacity})
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        );
+                      })()}
                   </div>
                 </Link>
               ))
