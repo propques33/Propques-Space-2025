@@ -201,7 +201,7 @@ function App() {
       const fullProperty = { ...property, inventory: inventories };
       console.log("Submitting Property:", fullProperty);
       setUploading(true);
-      const response = await fetch("https://propques-space-backend-i8etb.ondigitalocean.app/api/properties", {
+      const response = await fetch("https://api.propques.space/api/properties", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(fullProperty),

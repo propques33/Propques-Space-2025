@@ -14,7 +14,7 @@ const PropertyList = () => {
 
   useEffect(() => {
     axios
-      .get("https://propques-space-backend-i8etb.ondigitalocean.app/api/properties")
+      .get("https://api.propques.space/api/properties")
       .then((res) => {
         setProperties(res.data);
         setFiltered(res.data);

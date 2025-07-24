@@ -11,7 +11,7 @@ const SearchResult = () => {
       // Build query parameters from filters
       const queryParams = new URLSearchParams(filters).toString();
       // Replace with your actual API endpoint
-      const res = await fetch(`https://propques-space-backend-i8etb.ondigitalocean.app/api/search?${queryParams}`);
+      const res = await fetch(`https://api.propques.space/api/search?${queryParams}`);
       const data = await res.json();
   
       setResults(data);

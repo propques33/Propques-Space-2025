@@ -17,7 +17,7 @@ export default function FilterPage() {
   const images = [cuni, w2, w3, worqspot];
 
   useEffect(() => {
-    axios.get("https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/cities").then((res) => {
+    axios.get("https://api.propques.space/api/properties/cities").then((res) => {
       setCities(res.data);
     });
   }, []);
@@ -28,7 +28,7 @@ export default function FilterPage() {
       return;
     }
     axios
-      .get(`https://propques-space-backend-i8etb.ondigitalocean.app/api/properties/centers?city=${city}`)
+      .get(`https://api.propques.space/api/properties/centers?city=${city}`)
       .then((res) => {
         setCenters(res.data);
       });
